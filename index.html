@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
+
 <body>
 <main>
     <div class = "left-side">
@@ -26,42 +28,52 @@
             <p>You <em>know</em> you want to.</p>
         </div>
     
-        
-        <form class="form">
-        <p class = "break">Lets do this!</p>
-        <div>
-            <label for="firstname">First Name</label>
-            <input id="firstname" name="firstname">
-        </div>
-        <div>
-            <label for="lastname">Last Name</label>
-            <input id="lastname" name="lastname">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input id="email" name="email">
-        </div>
-        <div>
-            <label for="phonenumber">Phone Number</label>
-            <input id="phonenumber" name="phonenumber">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input id="password" name="password">
-        </div>
-        <div>
-            <label for="confirm">Confirm Password</label>
-            <input id="confirm" name="confirm">
-        </div>
-        </form>
-
-        <div class='submit-section'>
-            <div>
-            <button type="submit" form="my-form">Create Account</button>
-            <p>Already have an account? <a href="https://github.com/amk6451/signup_form/tree/main">Log in</a></p>
+       
+        <form id="form">
+            <fieldset>
+            <p class = "break">Lets do this!</p>
+            <div class = "field">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Thor"  class="invalid" required>
+                <div id = "firstError" class= "firstError"></div>
             </div>
-        </div>
+            <div class = "field">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Odinson" required >
+                <div id = "lastError"class= "lastError"></div>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="abc@email.com" pattern="^.+@.+$" required>
+                <div id="emailError" class="emailError"></div>
+            </div>
+            
+            <div class = "field">
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" id="phonenumber" name="phonenumber" placeholder="###-###-####" pattern="^\d{3}-\d{3}-\d{4}$" required >
+                <div id= "phonenumberError" class= "phonenumberError"></div>
+            </div>
+            <div class = "field">
+                <label for="password">Password</label>
+                <input type="password" minlength="3" maxlength="20" id="password" name="password" required>
+                <div id= "passwordError"class= "passwordError"></div>
+            </div>
+            <div class = "field">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm" required>
+                <div id = "confirmError"class= "confirmError"></div>
+            </div>
+            </fieldset>
+            <div class='submit-section'>
+                <div>
+                <button type="submit" id ="submitButton">Create Account</button>
+                <p>Already have an account? <a href="https://github.com/amk6451/signup_form/tree/main">Log in</a></p>
+                </div>
+            </div>
+            
+        </form>
     </div>
 </main>
+<script src="javascript.js"></script>
 </body>
 </html>
